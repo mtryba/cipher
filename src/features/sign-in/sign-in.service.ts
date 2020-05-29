@@ -3,7 +3,8 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '../../shared/services/jwt/jwt.service';
 import { UsersService } from '../users/users.service';
 import { HashService } from '../../shared/services/hash-service/hash.service';
-import { Errors, env } from '../../config';
+import { Errors } from '../../constants';
+import { env } from '../../config';
 import { SignInReqDto, SignInResDto } from './dtos';
 
 @Injectable()

@@ -1,12 +1,14 @@
 import { bool, cleanEnv, num, str } from 'envalid';
 
+import { EnvValidator } from '../shared/interfaces';
+
 enum Environments {
   DEV = 'DEV',
   PROD = 'PROD',
   TEST = 'TEST',
 }
 
-const envValidator = {
+const envValidator: EnvValidator = {
   PORT: num(),
   AUTH_TOKEN_SECRET: str(),
   NODE_ENV: str({ choices: [Environments.DEV, Environments.PROD, Environments.TEST] }),

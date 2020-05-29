@@ -1,6 +1,8 @@
 import { BadRequestException, UnauthorizedException } from '@nestjs/common';
 
-import { Errors, env } from '../../../config';
+import { Errors } from '../../../constants';
+import { env } from '../../../config';
+import { AuthPayload } from '../../interfaces';
 import { JwtService } from './jwt.service';
 
 jest.mock('../../../config/env', () => {
@@ -42,7 +44,7 @@ describe('JwtService', () => {
 
     it('should throw error with unexpected token payload', async () => {
       try {
-        await jwtService.sign({}, secret);
+        await jwtService.sign({} as AuthPayload, secret);
       } catch (err) {
         expect(err).toBeDefined();
         expect(err).toBeInstanceOf(BadRequestException);

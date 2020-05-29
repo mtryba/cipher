@@ -1,9 +1,9 @@
 import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from '@nestjs/common';
 
-import { Errors, env } from '../../config';
+import { Errors } from '../../constants';
+import { env } from '../../config';
 import { JwtService } from '../services/jwt/jwt.service';
 import { UsersService } from '../../features/users/users.service';
-import { AuthPayload } from '../interfaces';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -20,7 +20,7 @@ export class AuthGuard implements CanActivate {
       throw new UnauthorizedException(Errors.MISSING_AUTH_TOKEN);
     }
 
-    const decodedToken = await this.jwtService.verify<AuthPayload>(token, env.AUTH_TOKEN_SECRET);
+    const decodedToken = await this.jwtService.verify(token, env.AUTH_TOKEN_SECRET);
     req.requester = await this.usersService.getUserByEmail(decodedToken.email);
 
     return true;

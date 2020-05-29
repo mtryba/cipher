@@ -5,7 +5,7 @@ import { UsersService } from '../users/users.service';
 import { HashService } from '../../shared/services/hash-service/hash.service';
 import { CustomLoggerService } from '../../shared/custom-logger/custom-logger.service';
 import { SignInService } from './sign-in.service';
-import { Errors } from '../../config';
+import { Errors } from '../../constants';
 
 jest.mock('../../config/env', () => {
   return {

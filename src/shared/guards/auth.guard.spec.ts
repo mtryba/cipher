@@ -1,6 +1,6 @@
 import { UnauthorizedException } from '@nestjs/common';
 
-import { Errors } from '../../config';
+import { Errors } from '../../constants';
 import { UsersService } from '../../features/users/users.service';
 import { JwtService } from '../services/jwt/jwt.service';
 import { HashService } from '../services/hash-service/hash.service';

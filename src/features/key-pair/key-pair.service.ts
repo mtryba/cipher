@@ -3,8 +3,8 @@ import { BadRequestException, Injectable } from '@nestjs/common';
 
 import { GenerateKeyPairResDto } from './dtos';
 import { CustomLoggerService } from '../../shared/custom-logger/custom-logger.service';
-import { env, Errors } from '../../config';
-
+import { env } from '../../config';
+import { Errors } from '../../constants';
 
 @Injectable()
 export class KeyPairService {
@@ -27,7 +27,7 @@ export class KeyPairService {
             cipher: 'aes-256-cbc',
             passphrase: env.PRIV_KEY_SECRET,
           }
-        }, (err, pubKey, privKey) => {
+        }, (err: Error, pubKey: string, privKey: string) => {
           if (err) { reject(err) }
 
           resolve({ pubKey, privKey });

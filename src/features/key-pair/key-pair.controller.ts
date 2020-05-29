@@ -1,11 +1,4 @@
 import { Controller, Post, UseGuards } from '@nestjs/common';
-
-import { Errors, Routes } from '../../config';
-import { KeyPairService } from './key-pair.service';
-import { Requester } from '../../shared/decorators';
-import { User } from '../users/users.interfaces';
-import { AuthGuard } from '../../shared/guards/auth.guard';
-import { UsersService } from '../users/users.service';
 import {
   ApiBadRequestResponse,
   ApiBasicAuth,
@@ -13,6 +6,14 @@ import {
   ApiTags,
   ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
+
+import { Errors, Routes } from '../../constants';
+import { KeyPairService } from './key-pair.service';
+import { Requester } from '../../shared/decorators';
+import { User } from '../users/users.interfaces';
+import { AuthGuard } from '../../shared/guards/auth.guard';
+import { UsersService } from '../users/users.service';
+
 import { GenerateKeyPairResDto } from './dtos';
 
 @ApiBasicAuth()

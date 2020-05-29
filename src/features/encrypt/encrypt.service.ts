@@ -2,7 +2,7 @@ import * as http from 'http';
 import * as crypto from 'crypto';
 import { BadRequestException, Injectable } from '@nestjs/common';
 
-import { Errors } from '../../config';
+import { Errors } from '../../constants';
 import { User } from '../users/users.interfaces';
 
 @Injectable()

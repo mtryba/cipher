@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 
-import { Errors } from '../../config';
+import { Errors } from '../../constants';
 import { User } from './users.interfaces';
 import { UsersUpdateDto } from './dtos/users-update.dto';
 

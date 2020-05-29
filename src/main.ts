@@ -6,7 +6,8 @@ import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 
 import { AppModule } from './app.module';
-import { config, Routes, env } from './config';
+import { Routes } from './constants';
+import { config, env } from './config';
 import { CustomLoggerService } from './shared/custom-logger/custom-logger.service';
 import { swaggerSetup } from './shared/services/swagger';
 

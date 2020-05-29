@@ -2,7 +2,7 @@ import { Body, Controller, Post } from '@nestjs/common';
 import { ApiCreatedResponse, ApiTags, ApiUnauthorizedResponse } from '@nestjs/swagger';
 
 import { SignInService } from './sign-in.service';
-import { Errors, Routes } from '../../config';
+import { Errors, Routes } from '../../constants';
 import { SignInReqDto, SignInResDto } from './dtos';
 
 @ApiTags(Routes.SIGN_IN)

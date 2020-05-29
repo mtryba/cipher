@@ -9,7 +9,7 @@ export class HashService {
     private readonly customLoggerService: CustomLoggerService,
   ) {}
 
-  public async compareHash(text: string, hash: string) {
+  public async compareHash(text: string, hash: string): Promise<boolean> {
     try {
       return await compare(text, hash);
     } catch (err) {

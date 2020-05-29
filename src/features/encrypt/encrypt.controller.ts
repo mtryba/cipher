@@ -5,7 +5,7 @@ import { EncryptService } from './encrypt.service';
 import { AuthGuard } from '../../shared/guards/auth.guard';
 import { Requester } from '../../shared/decorators';
 import { User } from '../users/users.interfaces';
-import { Routes } from '../../config';
+import { Routes } from '../../constants';
 
 @ApiBasicAuth()
 @ApiTags(Routes.ENCRYPT)

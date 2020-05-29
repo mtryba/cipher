@@ -1,6 +1,6 @@
 import { NotFoundException } from '@nestjs/common';
 
-import { Errors } from '../../config';
+import { Errors } from '../../constants';
 import { UsersService } from './users.service';
 
 jest.mock('../../config/env', () => {
