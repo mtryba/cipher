@@ -11,7 +11,7 @@ If you have nvm use `nvm install v12.17.0` and after it use `nvm use`
 
 ### Production:
 1. `docker build -t leocode/task:latest .`
-2. `docker run -p 9000:9000 -e PORT=9000 -e NODE_ENV=PROD -e LOGGER_LOG_LEVEL=info -e SWAGGER_DOCS=true -e AUTH_TOKEN_SECRET=authSecret -e PRIV_KEY_SECRET=secret -e TOKEN_EXPIRATION=5 leocode/test:latest `
+2. `docker run -p 9000:9000 -e PORT=9000 -e NODE_ENV=PROD -e LOGGER_LOG_LEVEL=info -e SWAGGER_DOCS=true -e AUTH_TOKEN_SECRET=authSecret -e PRIV_KEY_SECRET=secret -e TOKEN_EXPIRATION=5 leocode/task:latest `
 
 ### Urls
 - `npm run build` - Build app
