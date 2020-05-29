@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  dev:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - ${PORT}:${PORT}
+    env_file:
+      - .env
+  prod:
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    ports:
+      - ${PORT}:${PORT}
+    env_file:
+      - .env

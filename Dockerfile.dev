@@ -1,0 +1,15 @@
+FROM node:12.17.0-alpine
+WORKDIR /app
+
+COPY package* ./
+
+RUN apk add --no-cache make gcc g++ python
+
+RUN npm install
+
+RUN npm rebuild bcrypt --build-from-source
+RUN apk del make gcc g++ python
+
+COPY . .
+
+CMD ["npm", "run", "start:dev"]
