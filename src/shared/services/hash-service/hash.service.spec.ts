@@ -11,6 +11,7 @@ jest.mock('../../../config/env', () => {
         LOGGER_LOG_LEVEL: 'debug',
         TOKEN_EXPIRATION: 5,
         SWAGGER_DOCS: false,
+        PRIV_KEY_SECRET: 'secret',
       }
     },
     get Environments() {
